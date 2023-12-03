@@ -961,7 +961,7 @@ local FarmTab = Window:MakeTab({
     PremiumOnly = false
 })
      
-FarmTabTab:AddToggle({
+FarmTab:AddToggle({
 	Name = "AutoFarmLevel",
 	Default = false,
     Flag = "LevelFarm",
