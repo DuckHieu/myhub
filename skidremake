@@ -955,14 +955,15 @@ getgenv().ToTargets = function(p)
         local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "HieuHUB", HidePremium = false, IntroText = "Cac Hub", SaveConfig = true, ConfigFolder = "HieuHUB"})
   -----Tab-----
-local M = Window:MakeTab({
+local FarmTab = Window:MakeTab({
     Name = "General",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
-    ToggleFarm = M:AddToggle({
-    Name = "Auto Farm",
-    Default = false,
+     
+FarmTabTab:AddToggle({
+	Name = "AutoFarmLevel",
+	Default = false,
     Flag = "LevelFarm",
     Save = true,
     Callback = function(Value)
@@ -970,4 +971,5 @@ local M = Window:MakeTab({
         StopTween(_G.AutoFarm)
     end    
 })
+
 
