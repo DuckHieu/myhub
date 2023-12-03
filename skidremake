@@ -780,7 +780,7 @@ local NotiFrame = Instance.new("Frame")
     )
     end
  
- do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("ZENHUB")  if ui then ui:Destroy() end end
+ do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("HIEUHUB")  if ui then ui:Destroy() end end
  
  function Update:Window(text,logo,keybind)
  local osfunc = {}
@@ -791,14 +791,14 @@ local NotiFrame = Instance.new("Frame")
  local keybind = keybind or Enum.KeyCode.RightControl
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
  
- local ZENHUB = Instance.new("ScreenGui")
- ZENHUB.Name = "ZENHUB"
- ZENHUB.Parent = game.CoreGui
- ZENHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ local HIEUHUB = Instance.new("ScreenGui")
+ HIEUHUB.Name = "HIEUHUB"
+ HIEUHUB.Parent = game.CoreGui
+ HIEUHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
  
  local Main = Instance.new("Frame")
  Main.Name = "Main"
- Main.Parent = ZENHUB
+ Main.Parent = H
  Main.ClipsDescendants = true
  Main.AnchorPoint = Vector2.new(0.5,0.5)
  Main.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
@@ -1092,7 +1092,7 @@ local NotifHolderUIStroke = Instance.new("UIStroke")
 local Line = Instance.new("Frame")
 
 NotificationHold.Name = "NotificationHold"
-NotificationHold.Parent = ZENHUB
+NotificationHold.Parent = HIEUHUB
 NotificationHold.BackgroundColor3 = _G.WindowBackgroundColor
 NotificationHold.BackgroundTransparency = 1
 NotificationHold.BorderSizePixel = 0
@@ -4786,13 +4786,13 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Setting = Library:Tab("Settings","rbxassetid://11446835336")
 --------------------------------------------------------------------
 
-Setting:Label("Hãy Cày Thuê")
+Setting:Label("Hãy Xem Sex")
 
 Setting:Line()
 
 Setting:Button("Sao Chép Link Facebook",function()
  
- setclipboard("https://www.facebook.com/asukanaken")
+ setclipboard("https://www.facebook.com/hieu.01.4.09")
   DiscordLib:Notification("Thông Báo" , "Đã Sao Chép Link Facebook" , 10 ,11816162894 )
  end)
 
