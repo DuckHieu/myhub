@@ -2664,10 +2664,6 @@ local Section = W:AddSection({
     Name = "Update"
 })
 
-W:AddLabel("[+] HieuHUB is back!")
-W:AddLabel("[+] I Not Skidder!")
-W:AddLabel("[+] I Will overcome Hirimii,MTriet Hub!!!")
-W:AddLabel("[+] Load Script Faster!")
 
 local Section = W:AddSection({
     Name = "Status"
@@ -3352,13 +3348,13 @@ Farmfasttoggle = M:AddToggle({
 })
 
 local Section = M:AddSection({
-    Name = "Kaitun Met Vaiz"
+    Name = "Cuttay"
 })
 
-M:AddParagraph("Kaitun/Cantay","Kaitun bản này đell khác gì bản kia.")
+M:AddParagraph("Deo nen dung")
 
 M:AddToggle({
-    Name = "Kaitun[Ko có kill players]",
+    Name = "Kaitun(can tay)",
     Default = false,
     Flag = "Kaitun",
     Save = true,
