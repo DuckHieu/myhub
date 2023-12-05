@@ -18,10 +18,17 @@
     end
 
     ---Tabs---
-    local Tab = Window:MakeTab({
+    local FarmTab = Window:MakeTab({
         Name = "Auto Farm",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
+    })
+
+    FarmTab:AddToggle({
+        Name = "ABC",
+        Default = true,
+        Save = true,
+        Flag = "toggle"
     })
 
 
