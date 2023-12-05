@@ -5,7 +5,7 @@
 
     ----Values----
     _G.autoclick = true
-   
+
 
 
 
@@ -18,7 +18,7 @@
         end
     end
 
-   
+
 
 
     ---Tabs---
@@ -26,13 +26,4 @@
         Name = "Auto Farm",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
-    })
-
-    FarmTab:AddToggle({
-        Name = "Auto Click",
-        Default = false,
-        Callback = function(Value)
-            _G.autoclick = Value
-            autoclick()
-        end    
     })
