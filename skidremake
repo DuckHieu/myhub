@@ -18,7 +18,7 @@
     end
 
     ---Tabs---
-    local FarmTab = Window:MakeTab({
+    local Tab = Window:MakeTab({
         Name = "Auto Farm",
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
@@ -29,12 +29,4 @@
 
 
 
-    ----Toggle
-    FarmTab:AddToggle({
-        Name = "Auto Click",
-        Default = false,
-        Callback = function(Value)
-            _G.autoclick = Value
-            autoclick()
-        end    
-    })
+   
