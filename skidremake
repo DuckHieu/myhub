@@ -41,11 +41,4 @@
                     autoclick()
                 end    
             })
-            FarmTab:AddToggle({
-                Name = "Auto rebirth",
-                Default = false,
-                Callback = function(Value)
-                    _G.autoreb = Value
-                    autoreb()
-                end    
-            })
+            
