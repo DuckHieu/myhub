@@ -24,11 +24,12 @@
         PremiumOnly = false
     })
 
-    FarmTab:AddToggle({
-        Name = "ABC",
-        Default = true,
-        Save = true,
-        Flag = "toggle"
+    Tab:AddToggle({
+        Name = "This is a toggle!",
+        Default = false,
+        Callback = function(Value)
+            print(Value)
+        end    
     })
 
 
