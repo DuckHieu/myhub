@@ -4,6 +4,7 @@ local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium =
 
 --Values
 _G.autoclick = true
+_G.autoegg = "Basic Egg"
 
 
 ---func
@@ -12,6 +13,12 @@ function autoclick()
         game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
         wait(0.000000000000000000000000000000000000000000000001)
      end   
+end
+function autoegg()
+    while _G.autoegg == true do
+        game:GetService("ReplicatedStorage").Packages.Knit.Services.EggService.RF.OpenEgg:InvokeServer("Basic Egg","Single")
+        wait(0.001)
+     end  
 end
 
 
@@ -33,6 +40,15 @@ FTab:AddToggle({
 	Callback = function(Value)
 		_G.autoclick = Value
         autoclick()
+	end    
+})
+FTab:AddDropdown({
+	Name = "Select Egg",
+	Default = "Basic",
+	Options = {"Basic", "Rare"},
+	Callback = function(Value)
+		_G.autoegg = Value
+        autoegg()
 	end    
 })
 
