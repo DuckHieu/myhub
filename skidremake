@@ -24,7 +24,7 @@
         PremiumOnly = false
     })
 
-    Tab:AddToggle({
+    FarmTab:AddToggle({
         Name = "This is a toggle!",
         Default = false,
         Callback = function(Value)
