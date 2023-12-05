@@ -10,7 +10,7 @@ _G.autoclick = true
 
 
 ---Func---
-function autoclick() = true do
+function autoclick() 
     while _G.autoclick == true do
         game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
         wait(0.000000000000000000000000001)
@@ -34,7 +34,7 @@ FarmTab:AddToggle({
 	Name = "Auto Click",
 	Default = false,
 	Callback = function(Value)
-        _G.autoclick
+        _G.autoclick = true
 		autoclick()
 	end    
 })
