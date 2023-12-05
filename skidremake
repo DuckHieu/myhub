@@ -5,6 +5,7 @@
 
     ----Values----
     _G.autoclick = true
+    _G.autoreb = true
 
 
 
@@ -16,6 +17,14 @@
             wait(0.000000000000000000000000001)
         end
     end
+
+    function autoreb()
+        while wait _G.autoreb == true do
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.RebirthService.RF.RequestRebirth:InvokeServer(game:GetService("Players").LocalPlayer)
+            wait(0.01)
+         end    
+    end
+
 
     ---Tabs---
     local FarmTab = Window:MakeTab({
@@ -33,9 +42,11 @@
         end    
     })
 
-
-
-
-
-
-   
+    FarmTab:AddToggle({
+        Name = "Auto Rebirth",
+        Default = false,
+        Callback = function(Value)
+            _G.autoreb = Value
+            autoreb()
+        end    
+    })
