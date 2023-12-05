@@ -17,9 +17,6 @@ function autoclick() = true do
      end
 end
 
-    
-end
-
 ---Tabs---
 local FarmTab = Window:MakeTab({
 	Name = "Auto Farm",
