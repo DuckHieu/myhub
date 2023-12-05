@@ -1,29 +1,38 @@
-    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-    local Window = OrionLib:MakeWindow({Name = "Test", HidePremium = false, SaveConfig = false, ConfigFolder = "Test"})
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
-
-    ----Values----
-    _G.autoclick = true
-
+--Values
+_G.autoclick = true
 
 
-
-
-    ---Func---
-    function autoclick()
-        while _G.autoclick == true do
-            game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
-            wait(0.000000000000000000000000001)
-        end
-    end
+---func
+function autoclick()
+    while _G.autoclick == true do
+        game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
+        wait(0.000000000000000000000000000000000000000000000001)
+     end   
+end
 
 
 
 
-    ---Tabs---
-    local FarmTab = Window:MakeTab({
-        Name = "Auto Farm",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-    })
+
+
+
+----tabs
+local FTab = Window:MakeTab({
+	Name = "Tab 1",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+FTab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		_G.autoclick = Value
+        autoclick()
+	end    
+})
+
