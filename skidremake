@@ -1,44 +1,38 @@
-            local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-            local Window = OrionLib:MakeWindow({Name = "Test", HidePremium = false, SaveConfig = false, ConfigFolder = "Test"})
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "Test", HidePremium = false, SaveConfig = false, ConfigFolder = "Test"})
 
 
 
-            ----Values----
-            _G.autoclick = true
-            _G.autoreb = true
+    ----Values----
+    _G.autoclick = true
+   
 
 
 
 
-            ---Func---
-            function autoclick()
-                while _G.autoclick == true do
-                    game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
-                    wait(0.000000000000000000000000001)
-                end
-            end
+    ---Func---
+    function autoclick()
+        while _G.autoclick == true do
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickService.RF.Click:InvokeServer()
+            wait(0.000000000000000000000000001)
+        end
+    end
 
-            function autoreb()
-                while wait _G.autoreb == true do
-                    game:GetService("ReplicatedStorage").Packages.Knit.Services.RebirthService.RF.RequestRebirth:InvokeServer(game:GetService("Players").LocalPlayer)
-                    wait(0.01)
-                end    
-            end
+   
 
 
-            ---Tabs---
-            local FarmTab = Window:MakeTab({
-                Name = "Auto Farm",
-                Icon = "rbxassetid://4483345998",
-                PremiumOnly = false
-            })
+    ---Tabs---
+    local FarmTab = Window:MakeTab({
+        Name = "Auto Farm",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
 
-            FarmTab:AddToggle({
-                Name = "Auto Click",
-                Default = false,
-                Callback = function(Value)
-                    _G.autoclick = Value
-                    autoclick()
-                end    
-            })
-            
+    FarmTab:AddToggle({
+        Name = "Auto Click",
+        Default = false,
+        Callback = function(Value)
+            _G.autoclick = Value
+            autoclick()
+        end    
+    })
