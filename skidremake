@@ -37,7 +37,7 @@ FarmTab:AddToggle({
 
 
 -----Func
-local SuperFastMode = false -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
+local SuperFastMode = true -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
 
 
 local plr = game.Players.LocalPlayer
@@ -734,58 +734,6 @@ function CheckQuest()
         end
     end
 end
-spawn(function()
-    while wait() do
-        if _G.AutoFarm then
-				pcall(function()
-					if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-						StartMagnet = false
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-					end
-					if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-						StartMagnet = false
-						CheckQuest()
-						repeat wait() topos(CFrameQuest) until (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoFarm
-						if (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
-							wait(1.2)
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)
-							wait(0.5)
-						end
-					elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-						CheckQuest()
-						if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
-							for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-								if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-									if v.Name == Ms then
-										repeat wait()
-											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-												PosMon = v.HumanoidRootPart.CFrame
-												v.HumanoidRootPart.CanCollide = false
-												v.Humanoid.WalkSpeed = 0
-												v.Head.CanCollide = false
-												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-												StartMagnet = true
-												topos(v.HumanoidRootPart.CFrame * MethodFarm)
-												game:GetService'VirtualUser':CaptureController()
-												game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-											else
-												StartMagnet = false
-												game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-											end
-										until not _G.AutoFarm or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
-									end
-								end
-							end
-						else
-							StartMagnet = false
-							if game:GetService("ReplicatedStorage"):FindFirstChild(Ms) then
-								topos(game:GetService("ReplicatedStorage"):FindFirstChild(Ms).HumanoidRootPart.CFrame * CFrame.new(0,20,0))
-							else	
-								topos(CFrameMon)
-							end
-						end
-					end
-				end)
 
 
 
