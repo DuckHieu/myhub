@@ -737,7 +737,6 @@ end
 spawn(function()
     while wait() do
         if _G.AutoFarm then
-			if _G.Select_Mode_Farm == "Farm Theo Lever" then
 				pcall(function()
 					if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 						StartMagnet = false
@@ -760,8 +759,6 @@ spawn(function()
 									if v.Name == Ms then
 										repeat wait()
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-												EquipWeapon(_G.Select_Weapon)
-												AutoHaki()
 												PosMon = v.HumanoidRootPart.CFrame
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
@@ -786,96 +783,6 @@ spawn(function()
 							else	
 								topos(CFrameMon)
 							end
-						end
-					end
-				end)
-			elseif _G.Select_Mode_Farm == "Farm speed" then
-				pcall(function()
-					if game:GetService("Players").LocalPlayer.Data.SpawnPoint.Value == SPAWNPOINT then
-						if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-							StartMagnet = false
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-						end
-						if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-							StartMagnet = false
-							CheckQuest()
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,LevelQuest)
-						elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-							CheckQuest()
-							if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
-								for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-									if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-										if v.Name == Ms then
-											repeat wait()
-												if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
-													EquipWeapon(_G.Select_Weapon)
-													AutoHaki()
-													PosMon = v.HumanoidRootPart.CFrame
-													v.HumanoidRootPart.CanCollide = false
-													v.Humanoid.WalkSpeed = 0
-													v.Head.CanCollide = false
-													v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-													StartMagnet = true
-													topos(v.HumanoidRootPart.CFrame * MethodFarm)
-													game:GetService'VirtualUser':CaptureController()
-													game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-												else
-													StartMagnet = false
-													game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-												end
-											until not _G.AutoFarm or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
-										end
-									end
-								end
-							else
-								StartMagnet = false
-								if game:GetService("ReplicatedStorage"):FindFirstChild(Ms) then
-									topos(game:GetService("ReplicatedStorage"):FindFirstChild(Ms).HumanoidRootPart.CFrame * CFrame.new(0,20,0))
-								else	
-									topos(CFrameMon)
-								end
-							end
-						end
-					else
-						repeat task.wait()
-							game.Players.LocalPlayer.Character.Head:Destroy()
-							wait(0.5)
-							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrameQuest
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetSpawnPoint")
-						until game:GetService("Players").LocalPlayer.Data.SpawnPoint.Value == SPAWNPOINT 
-					end
-                end)
-            elseif _G.Select_Mode_Farm == "Farm Không Nhiệm Vụ" then
-				pcall(function()
-                	CheckQuest()
-					if game:GetService("Workspace").Enemies:FindFirstChild(Ms) then
-						for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-							if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-								if v.Name == Ms then
-									if v.Humanoid.Health > 0 then
-										repeat wait()
-											EquipWeapon(_G.Select_Weapon)
-											AutoHaki()
-											PosMon = v.HumanoidRootPart.CFrame
-											v.HumanoidRootPart.CanCollide = false
-											v.Humanoid.WalkSpeed = 0
-											v.Head.CanCollide = false
-											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-											StartMagnet = true
-											topos(v.HumanoidRootPart.CFrame * MethodFarm)
-											game:GetService'VirtualUser':CaptureController()
-											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-										until not _G.AutoFarm or v.Humanoid.Health <= 0 or not v.Parent
-									end
-								end
-							end
-						end
-					else
-						StartMagnet = false
-						if game:GetService("ReplicatedStorage"):FindFirstChild(Ms) then
-							topos(game:GetService("ReplicatedStorage"):FindFirstChild(Ms).HumanoidRootPart.CFrame * CFrame.new(0,20,0))
-						else	
-							topos(CFrameMon)
 						end
 					end
 				end)
