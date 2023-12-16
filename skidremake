@@ -19,7 +19,7 @@ FarmTab:AddToggle({
 	Name = "Auto Farm",
 	Default = false,
 	Callback = function(Value)
-		_G.AutoFarmQuest = Value
+		_G.AutoLevel = Value
 	end    
 })
 
@@ -792,7 +792,7 @@ for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 end
     spawn(function()
         while task.wait() do
-        if AutoFarmQuest then
+        if AutoLevel then
         pcall(function()
           CheckLevel()
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
@@ -842,7 +842,7 @@ end
         end
         end
         end)
-        AutoFarmQuest = true
+        AutoLevel = true
         BypassTP = true
         
 
