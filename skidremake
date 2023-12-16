@@ -1,126 +1,3 @@
-if game.PlaceId == 2753915549 then
-    World1 = true
-elseif game.PlaceId == 4442272183 then
-    World2 = true
-elseif game.PlaceId == 7449423635 then
-    World3 = true
-else
-    game:GetService("Players").LocalPlayer:Kick("Do not Support, Please wait...")
-end
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Akiki Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "DucHieu"})
-
-local FarmTab = Window:MakeTab({
-	Name = "Auto Farm",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-FarmTab:AddToggle({
-	Name = "Auto Farm",
-	Default = false,
-	Callback = function(Value)
-		_G.AutoLevel = Value
-	end    
-})
-
-FarmTab:AddToggle({
-	Name = "Fast Attack",
-	Default = false,
-	Callback = function(Value)
-		_G.AttackNoCD = Value
-	end    
-})
-FarmTab:AddToggle({
-    Name = "Bring Mobs",
-    Default = true,
-    Flag = "Bring Mobs",
-    Save = false,
-    Callback = function(Value)
-        _G.BringMonster = Value
-    end    
-})
-
-
-
-
-
-
-
------Func
-local SuperFastMode = true -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
-
-
-local plr = game.Players.LocalPlayer
-
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-
-function GetCurrentBlade() 
-    local p13 = CbFw2.activeController
-    local ret = p13.blades[1]
-    if not ret then return end
-    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-    return ret
-end
-function AttackNoCD() 
-    local AC = CbFw2.activeController
-    for i = 1, 1 do 
-        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-            plr.Character,
-            {plr.Character.HumanoidRootPart},
-            60
-        )
-        local cac = {}
-        local hash = {}
-        for k, v in pairs(bladehit) do
-            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                table.insert(cac, v.Parent.HumanoidRootPart)
-                hash[v.Parent] = true
-            end
-        end
-        bladehit = cac
-        if #bladehit > 0 then
-            local u8 = debug.getupvalue(AC.attack, 5)
-            local u9 = debug.getupvalue(AC.attack, 6)
-            local u7 = debug.getupvalue(AC.attack, 4)
-            local u10 = debug.getupvalue(AC.attack, 7)
-            local u12 = (u8 * 798405 + u7 * 727595) % u9
-            local u13 = u7 * 798405
-            (function()
-                u12 = (u12 * u9 + u13) % 1099511627776
-                u8 = math.floor(u12 / u9)
-                u7 = u12 - u8 * u9
-            end)()
-            u10 = u10 + 1
-            debug.setupvalue(AC.attack, 5, u8)
-            debug.setupvalue(AC.attack, 6, u9)
-            debug.setupvalue(AC.attack, 4, u7)
-            debug.setupvalue(AC.attack, 7, u10)
-            pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play()
-                end
-            end)
-            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-            end
-        end
-    end
-end
-local cac
-if SuperFastMode then 
-    cac=task.wait
-else
-    cac=wait
-end
-while cac() do 
-    AttackNoCD()
-end
-
-
-
 function Tween(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = true end
@@ -284,7 +161,7 @@ function CheckLevel()
     NameMon = "Fishman Warrior"
     CFrameQ = CFrame.new(61122.65234375, 18.497442245483, 1569.3997802734)
     CFrameMon = CFrame.new(60844.10546875, 98.462875366211, 1298.3985595703)
-    if AutoLevel and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+    if AutoFarmQuest and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
     end
     elseif Lv == 400 or Lv <= 449 or SelectMonster == "Fishman Commando" or SelectArea == 'Fishman' then -- Fishman Commando
@@ -294,7 +171,7 @@ function CheckLevel()
     NameMon = "Fishman Commando"
     CFrameQ = CFrame.new(61122.65234375, 18.497442245483, 1569.3997802734)
     CFrameMon = CFrame.new(61738.3984375, 64.207321166992, 1433.8375244141)
-    if AutoLevel and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+    if AutoFarmQuest and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
     end
     elseif Lv == 450 or Lv <= 474 or SelectMonster == "God's Guard" or SelectArea == 'Sky Island' then -- God's Guard
@@ -304,7 +181,7 @@ function CheckLevel()
     NameMon = "God's Guard"
     CFrameQ = CFrame.new(-4721.8603515625, 845.30297851563, -1953.8489990234)
     CFrameMon = CFrame.new(-4628.0498046875, 866.92877197266, -1931.2352294922)
-    if AutoLevel and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+    if AutoFarmQuest and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
     end
     elseif Lv == 475 or Lv <= 524 or SelectMonster == "Shanda" or SelectArea == 'Sky Island' then -- Shanda
@@ -314,7 +191,7 @@ function CheckLevel()
     NameMon = "Shanda"
     CFrameQ = CFrame.new(-7863.1596679688, 5545.5190429688, -378.42266845703)
     CFrameMon = CFrame.new(-7685.1474609375, 5601.0751953125, -441.38876342773)
-    if AutoLevel and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+    if AutoFarmQuest and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-7894.6176757813, 5547.1416015625, -380.29119873047))
     end
     elseif Lv == 525 or Lv <= 549 or SelectMonster == "Royal Squad" or SelectArea == 'Sky Island' then -- Royal Squad
@@ -792,7 +669,7 @@ for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 end
     spawn(function()
         while task.wait() do
-        if _G.AutoLevel then
+        if AutoFarmQuest then
         pcall(function()
           CheckLevel()
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
@@ -825,7 +702,7 @@ end
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
           Click()
-          until not AutoLevel or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
+          until not AutoFarmQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
           end
           end
           end
@@ -842,10 +719,5 @@ end
         end
         end
         end)
-        AutoLevel = true
+        AutoFarmQuest = true
         BypassTP = true
-        
-
-
-
-
