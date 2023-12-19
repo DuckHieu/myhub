@@ -946,7 +946,7 @@ function library:Createlibrary()
     Main.BorderSizePixel = 2
 	Main.Draggable = true
     Main.Position = UDim2.new(0.300000012, 0, 0.5, 0)
-    Main.Size = UDim2.new(0, 400, 0, 400)
+    Main.Size = UDim2.new(0, 300, 0, 300)
     Main.BorderColor3 = Color3.fromRGB(0, 255, 0)
 
     UICorner.CornerRadius = UDim.new(0, 0)
@@ -960,7 +960,7 @@ function library:Createlibrary()
     Top_2225.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Top_2225.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Top_2225.BorderSizePixel = 0
-    Top_2225.Size = UDim2.new(0, 600, 0, 41)
+    Top_2225.Size = UDim2.new(0, 300, 0, 41)
 
     Text1.Name = "Text1"
     Text1.Parent = Top_2225
