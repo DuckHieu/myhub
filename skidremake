@@ -686,7 +686,7 @@ local Properties = {
 		BackgroundTransparency = 1,
 		Image = "http://www.roblox.com/asset/?id=5554237731",
 		ScaleType = Enum.ScaleType.Slice,
-		SliceCenter = Rect.new(3,3,297,297)
+		SliceCenter = Rect.new(3,3,200,200)
 	},
 	Shadow = {
 		Name = "Shadow",
