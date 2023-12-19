@@ -946,7 +946,7 @@ function library:Createlibrary()
     Main.BorderSizePixel = 2
 	Main.Draggable = true
     Main.Position = UDim2.new(0.300000012, 0, 0.5, 0)
-    Main.Size = UDim2.new(0, 600, 0, 600)
+    Main.Size = UDim2.new(0, 400, 0, 400)
     Main.BorderColor3 = Color3.fromRGB(0, 255, 0)
 
     UICorner.CornerRadius = UDim.new(0, 0)
@@ -1058,7 +1058,7 @@ function library:Createlibrary()
     Hub.Position = UDim2.new(0.535072386, 0, 0.606578946, 0)
     Hub.Size = UDim2.new(0, 200, 0, 39)
     Hub.Font = Enum.Font.FredokaOne
-    Hub.Text = "Hub | Kaitun One Click"
+    Hub.Text = "Vair Hub Cuttay "
     Hub.TextColor3 = Color3.fromRGB(4, 255, 0)
     Hub.TextScaled = true
     Hub.TextSize = 14.000
@@ -5175,7 +5175,7 @@ local Time = 0.09
 local AttackRandom = 2
 spawn(function()
 	while wait(5.5) do
-		AttackRandom = math.random(1,4)
+		AttackRandom = math.random(2,6)
 	end
 end)
 spawn(function()
