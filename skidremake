@@ -953,7 +953,7 @@ function library:Createlibrary()
     UICorner.Parent = Main
 
     Main.Size = UDim2.new(0, 600, 0, 2) wait(0.1)
-    Main:TweenSize(UDim2.new(0,600,0,600),"Out","Back",0.4,true)
+    Main:TweenSize(UDim2.new(0,400,0,400),"Out","Back",0.4,true)
 
     Top_2225.Name = "Top_2225"
     Top_2225.Parent = Main
