@@ -960,7 +960,7 @@ function library:Createlibrary()
     Top_2225.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Top_2225.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Top_2225.BorderSizePixel = 0
-    Top_2225.Size = UDim2.new(0, 300, 0, 41)
+    Top_2225.Size = UDim2.new(0, 250, 0, 41)
 
     Text1.Name = "Text1"
     Text1.Parent = Top_2225
@@ -1040,12 +1040,12 @@ function library:Createlibrary()
     Name.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Name.BorderSizePixel = 0
     Name.Position = UDim2.new(0.535262227, 0, 0.184210524, 0)
-    Name.Size = UDim2.new(0, 200, 0, 50)
+    Name.Size = UDim2.new(0, 150, 0, 50)
     Name.Font = Enum.Font.FredokaOne
     Name.Text = "Vair"
     Name.TextColor3 = Color3.fromRGB(255, 255, 255)
     Name.TextScaled = true
-    Name.TextSize = 14.000
+    Name.TextSize = 12.000
     Name.TextWrapped = true
 
     Hub.Name = "Hub"
@@ -1056,7 +1056,7 @@ function library:Createlibrary()
     Hub.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Hub.BorderSizePixel = 0
     Hub.Position = UDim2.new(0.535072386, 0, 0.606578946, 0)
-    Hub.Size = UDim2.new(0, 200, 0, 39)
+    Hub.Size = UDim2.new(0, 150, 0, 39)
     Hub.Font = Enum.Font.FredokaOne
     Hub.Text = "Vair Hub Cuttay "
     Hub.TextColor3 = Color3.fromRGB(4, 255, 0)
@@ -1246,7 +1246,7 @@ function library:Createlibrary()
         Start.BorderColor3 = Color3.fromRGB(0, 0, 0)
         Start.BorderSizePixel = 0
         Start.Position = UDim2.new(0.00728597445, 0, 0.323943675, 0)
-        Start.Size = UDim2.new(0, 534, 0, 100)
+        Start.Size = UDim2.new(0, 453, 0, 100)
 
         Button11.Name = "Button11"
         Button11.Parent = Start
@@ -1363,7 +1363,7 @@ function library:Createlibrary()
         MainMoney.BorderColor3 = Color3.fromRGB(0, 0, 0)
         MainMoney.BorderSizePixel = 0
         MainMoney.Position = UDim2.new(0.225641027, 0, 0, 0)
-        MainMoney.Size = UDim2.new(0, 185, 0, 25)
+        MainMoney.Size = UDim2.new(0, 165, 0, 25)
         MainMoney.Font = Enum.Font.FredokaOne
         MainMoney.Text = "( Beli and Fragments  )"
         MainMoney.TextColor3 = Color3.fromRGB(85, 85, 85)
