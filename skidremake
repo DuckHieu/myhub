@@ -1130,7 +1130,7 @@ function library:Createlibrary()
     Labe2l.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Labe2l.BorderSizePixel = 0
     Labe2l.Position = UDim2.new(0.0366666652, 0, 0.49333334, 0)
-    Labe2l.Size = UDim2.new(0, 550, 0, 2)
+    Labe2l.Size = UDim2.new(0, 300, 0, 2)
 
     Buttom.Name = "Buttom"
     Buttom.Parent = Main
@@ -1138,7 +1138,7 @@ function library:Createlibrary()
     Buttom.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Buttom.BorderSizePixel = 0
     Buttom.Position = UDim2.new(0.0416666679, 0, 0.49666667, 0)
-    Buttom.Size = UDim2.new(0, 549, 0, 284)
+    Buttom.Size = UDim2.new(0, 300, 0, 284)
 
     Labe3.Name = "Labe3"
     Labe3.Parent = Buttom
@@ -1146,7 +1146,7 @@ function library:Createlibrary()
     Labe3.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Labe3.BorderSizePixel = 0
     Labe3.Position = UDim2.new(-0.00910741277, 0, 0.957746506, 0)
-    Labe3.Size = UDim2.new(0, 550, 0, 2)
+    Labe3.Size = UDim2.new(0, 300, 0, 2)
 
 	PlayerUIMain.Name = "PlayerUIMain"
 	PlayerUIMain.Parent = Main
@@ -1154,7 +1154,7 @@ function library:Createlibrary()
 	PlayerUIMain.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	PlayerUIMain.BorderSizePixel = 2
 	PlayerUIMain.Position = UDim2.new(1.04166663, 0, 0, 0)
-	PlayerUIMain.Size = UDim2.new(0, 585, 0, 300)
+	PlayerUIMain.Size = UDim2.new(0, 300, 0, 300)
 	PlayerUIMain.BorderColor3 = Color3.fromRGB(0, 255, 0)
 
 	UICorner_5.CornerRadius = UDim.new(0, 0)
@@ -5175,7 +5175,7 @@ local Time = 0.09
 local AttackRandom = 2
 spawn(function()
 	while wait(5.5) do
-		AttackRandom = math.random(2,6)
+		AttackRandom = math.random(3,6)
 	end
 end)
 spawn(function()
