@@ -1792,14 +1792,50 @@ Tabs.Main:AddParagraph({
 
 WeaponType_Dropdown = Tabs.Main:AddDropdown("WeaponType", {
 	Title = "Weapon Type",
-	Values = {"Melee", "Sword", "Blox Fruits"},
+	Values = {"Melee", "Sword", "Devil Fruit"},
 	Multi = false,
 	Default = false,
 	Callback = function(Value)
-		_G.EquipWeapon = Value
+		_G.SelectWeapon = Value
 	end
 })
-
+spawn(function()
+    while wait() do
+        pcall(function()
+          if _G.SelectWeapon == "Melee" then
+            for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                if v.ToolTip == "Melee" then
+                if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                _G.SelectWeapon = v.Name
+            end
+        end
+    end
+        elseif _G.SelectWeapon == "Sword" then
+            for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if v.ToolTip == "Sword" then
+            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+            _G.SelectWeapon = v.Name
+        end
+    end
+        end
+            elseif _G.SelectWeapon == "Devil Fruit" then
+                for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                if v.ToolTip == "Blox Fruit" then
+                if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                _G.SelectWeapon = v.Name
+            end
+        end
+            end
+                else
+                    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.ToolTip == _G.SelectWeapon then
+                        _G.SelectWeapon = v.Name
+                        end
+                    end
+                end
+            end)
+        end
+    end)
 
 BringMob_Toggle = Tabs.Main:AddToggle("BringMob", {
 	Title = "Bring Mob",
