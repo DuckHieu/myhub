@@ -1732,7 +1732,7 @@ function isnetworkowner(object)
         return false
     end
 end
-getgenv().BringMobs = function(F)
+_G.BringMob = function(F)
     coroutine.wrap(function() 
         pcall(function() 
             for a, b in pairs(workspace.Enemies:GetChildren()) do 
@@ -1805,6 +1805,6 @@ BringMob_Toggle = Tabs.Main:AddToggle("BringMob", {
 	Title = "Bring Mob",
 	Default = false,
 	Callback = function(Value)
-		getgenv().BringMobs = Value
+		_G.BringMob = Value
 	end
 })
