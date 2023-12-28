@@ -65,9 +65,9 @@ UICorner.Parent = ImageButton
 UIAspectRatioConstraint.Parent = ImageButton
 UIAspectRatioConstraint.AspectRatio = 0.988
 
-FarmTabs.Main:AddParagraph({
+Tabs.Main:AddParagraph({
 	Title = "",
-	Content = "Auto Farm"
+	Content = "Farm Settings"
 })
 
 
