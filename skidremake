@@ -1799,3 +1799,12 @@ WeaponType_Dropdown = Tabs.Main:AddDropdown("WeaponType", {
 		_G.EquipWeapon = Value
 	end
 })
+
+
+BringMob_Toggle = Tabs.Main:AddToggle("BringMob", {
+	Title = "Bring Mob",
+	Default = false,
+	Callback = function(Value)
+		getgenv().BringMobs = Value
+	end
+})
