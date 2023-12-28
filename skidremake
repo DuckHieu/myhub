@@ -1722,6 +1722,57 @@ spawn(function()
 end)
 
 
+function isnetworkowner(object)
+    if isnetworkowner then
+        return isnetworkowner(object)
+    else
+        if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 500 then
+            return true
+        end
+        return false
+    end
+end
+getgenv().BringMobs = function(F)
+    coroutine.wrap(function() 
+        pcall(function() 
+            for a, b in pairs(workspace.Enemies:GetChildren()) do 
+                if b:FindFirstChild("Humanoid") and b:FindFirstChild("HumanoidRootPart") then
+                    if isnetworkowner(b:FindFirstChild("HumanoidRootPart"))then
+                        b:FindFirstChild("HumanoidRootPart").CanCollide = false
+                        b:FindFirstChild("HumanoidRootPart").Transparency = 1
+                        if not b:FindFirstChild("HumanoidRootPart"):FindFirstChild("BV")then
+                            local m = Instance.new("BodyVelocity")
+                            m.Parent = b:FindFirstChild("HumanoidRootPart")
+                            m.Name = "BV"
+                            m.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                            m.Velocity = Vector3.new(0,0,0)
+                        end
+                        if b:FindFirstChild("Humanoid"):FindFirstChild("Animator")then
+                            b:FindFirstChild("Humanoid"):FindFirstChild("Animator"):Remove();
+                        end
+                           b:FindFirstChild("HumanoidRootPart").CFrame = F
+                        elseif (b.Position-d.HumanoidRootPart.Position).magnitude < 500 then
+                            b:FindFirstChild("HumanoidRootPart").CanCollide = false
+                            b:FindFirstChild("HumanoidRootPart").Transparency = 1
+                            if not b:FindFirstChild("HumanoidRootPart"):FindFirstChild("BV")then
+                                local u = Instance.new("BodyVelocity")
+                                u.Parent = b:FindFirstChild("HumanoidRootPart")
+                                u.Name = "BV"
+                                u.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                                u.Velocity = Vector3.new(0,0,0)
+                            end
+                            if b:FindFirstChild("Humanoid"):FindFirstChild("Animator")then
+                                b:FindFirstChild("Humanoid"):FindFirstChild("Animator"):Remove()
+                            end
+                            b:FindFirstChild("HumanoidRootPart").CFrame = F
+                        end
+                    end
+                end
+            end)
+    end)()
+end
+
+
 
 
 
