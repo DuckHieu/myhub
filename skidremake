@@ -1743,7 +1743,7 @@ WeaponType_Dropdown = Tabs.Main:AddDropdown("WeaponType", {
 	Title = "Weapon Type",
 	Values = {"Melee", "Sword", "Blox Fruits"},
 	Multi = false,
-	Default = _G.EquipWeapon["Weapon_Type"],
+	Default = false,
 	Callback = function(Value)
 		_G.EquipWeapon = Value
 	end
