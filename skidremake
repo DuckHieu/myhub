@@ -2507,7 +2507,7 @@ repeat wait() until game.Players
     })
 
     local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
-        Title = "Dropdown",
+        Title = "Select Weapon",
         Values = {'Melee','Sword','Blox Fruit'},
         Multi = false,
         Default = 1,
@@ -3322,7 +3322,7 @@ spawn(function()
 
 
     local DropdownBoss = Tabs.Main:AddDropdown("DropdownBoss", {
-        Title = "Dropdown",
+        Title = "List Boss",
         Values = tableBoss,
         Multi = false,
         Default = 1,
@@ -3429,7 +3429,7 @@ spawn(function()
         end
 
     local DropdownMaterial = Tabs.Main:AddDropdown("DropdownMaterial", {
-        Title = "Dropdown",
+        Title = "Material",
         Values = MaterialList,
         Multi = false,
         Default = 1,
