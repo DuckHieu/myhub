@@ -6,7 +6,7 @@ local Window = Fluent:CreateWindow({
     Title = "Vair Hub",
     SubTitle = "https://discord.gg/4M7vR7n8es",
     TabWidth = 160,
-    Size = UDim2.fromOffset(450, 400),
+    Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
@@ -2576,7 +2576,7 @@ repeat wait() until game.Players
           BTP(CFrameQ)
           end
     else
-            Tween(CFrameQ)
+            BTP(CFrameQ)
             end
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
