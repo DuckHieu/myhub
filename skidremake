@@ -2626,6 +2626,7 @@ repeat wait() until game.Players
         while wait() do
             if _G.AutoSecondSea == true then
                 pcall(function()
+                    CheckLevel()
                     if game.Players.LocalPlayer.Data.Level.Value >= 700 and World1 then
                         _G.AutoLevel = false
                         if game.Workspace.Map.Ice.Door.CanCollide == true and game.Workspace.Map.Ice.Door.Transparency == 0 then
