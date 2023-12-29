@@ -2569,7 +2569,7 @@ repeat wait() until game.Players
           CheckLevel()
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-          if BypassTP then
+          if _G.AutoLevel = true then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
           BTP(CFrameQ)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
@@ -2588,7 +2588,7 @@ repeat wait() until game.Players
           repeat game:GetService("RunService").Heartbeat:wait()
           AutoHaki()
           EquipTool(SelectWeapon)
-          BTP(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+          Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
           v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
           v.HumanoidRootPart.Transparency = 1
           v.Humanoid.JumpPower = 0
