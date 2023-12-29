@@ -2624,7 +2624,7 @@ repeat wait() until game.Players
 
     spawn(function()
         while wait() do
-            if _G.AutoSecondSea then
+            if _G.AutoSecondSea == true then
                 pcall(function()
                     if game.Players.LocalPlayer.Data.Level.Value >= 700 and World1 then
                         _G.AutoLevel = false
@@ -2633,7 +2633,7 @@ repeat wait() until game.Players
                             wait(1)
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")
                             EquipTool(SelectWeapon)
-                            local pos2 = CFrame.new(1347.7124, 37.3751602, -1325.6488)
+                            local CFrame = CFrame.new(1347.7124, 37.3751602, -1325.6488)
                             repeat wait() Tween() until (pos2.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
                             wait(3)
                         elseif game.Workspace.Map.Ice.Door.CanCollide == false and game.Workspace.Map.Ice.Door.Transparency == 1 then
@@ -2643,6 +2643,7 @@ repeat wait() until game.Players
                                         repeat wait()
                                             AutoHaki()
                                             EquipTool(SelectWeapon)
+                                            Click()
                                             v.HumanoidRootPart.CanCollide = false
                                             v.HumanoidRootPart.Size = Vector3.new(60,60,60)
                                             v.HumanoidRootPart.Transparency = 1
@@ -2654,7 +2655,7 @@ repeat wait() until game.Players
                                     end
                                 end
                             else
-                                BTP(CFrame.new(1347.7124, 37.3751602, -1325.6488))
+                                Tween(CFrame.new(1347.7124, 37.3751602, -1325.6488))
                             end
                         else
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
