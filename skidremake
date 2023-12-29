@@ -3200,7 +3200,7 @@ spawn(function()
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
                 end
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-                    if _G.AutoBone = true then
+                    if _G.AutoBone == true then
                         wait()
                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - BoneCFrame.Position).Magnitude > 2500 then
                        BTP(BoneCFrame)
@@ -3263,7 +3263,7 @@ spawn(function()
 			if _G.CakePrince then
 				pcall(function()
                     local CakeCFrame = CFrame.new(-2077, 252, -12373)
-                    if BypassTP then
+                    if _G.CakePrince == true then
                     if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakeCFrame.Position).Magnitude > 2000 then
                     BTP(CakeCFrame)
                     wait(3)
