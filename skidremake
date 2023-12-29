@@ -2573,7 +2573,7 @@ repeat wait() until game.Players
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
           BTP(CFrameQ)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
-          Tween(CFrameQ)
+          BTP(CFrameQ)
           end
     else
             Tween(CFrameQ)
@@ -4805,7 +4805,7 @@ for i,v in pairs(game:GetService("Players"):GetChildren()) do
 end
 
 local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
-    Title = "Dropdown",
+    Title = "Player",
     Values = Playerslist,
     Multi = false,
     Default = 1,
@@ -4946,7 +4946,7 @@ elseif Third_Sea then
     end
 
 local DropdownIsland = Tabs.Teleport:AddDropdown("DropdownIsland",{
-    Title = "Dropdown",
+    Title = "Island",
     Values = IslandList,
     Multi = false,
     Default = 1,
@@ -5085,7 +5085,7 @@ end
 _G.SelectFruit = ""
 
 local DropdownFruit = Tabs.Fruit:AddDropdown("DropdownFruit", {
-    Title = "Dropdown",
+    Title = "Fruit",
     Values = Table_DevilFruitSniper,
     Multi = false,
     Default = 1,
@@ -5353,7 +5353,7 @@ end)
 local Chips = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Buddha","Sand","Phoenix","Dough"}
 
 local DropdownRaid = Tabs.Raid:AddDropdown("DropdownRaid", {
-    Title = "Dropdown",
+    Title = "Select Raid",
     Values = Chips,
     Multi = false,
     Default = 1,
