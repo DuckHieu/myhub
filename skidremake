@@ -2577,7 +2577,7 @@ repeat wait() until game.Players
           BTP(CFrameQ)
           end
     else
-            Tween(CFrameQ)
+            BTP(CFrameQ)
             end
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
