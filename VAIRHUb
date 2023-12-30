@@ -2574,11 +2574,9 @@ repeat wait() until game.Players
           BTP(CFrameQ)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
           BTP(CFrameQ)
-          
           end
     else
             BTP(CFrameQ)
-            
             end
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
@@ -4835,7 +4833,7 @@ ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
     pcall(function()
         if _G.TeleportPly then
-            repeat Teleport(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
+            repeat Tween(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
         end
     end)
 end)
