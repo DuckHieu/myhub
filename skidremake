@@ -2630,11 +2630,11 @@ repeat wait() until game.Players
                     if game.Players.LocalPlayer.Data.Level.Value >= 700 and World1 then
                         _G.AutoLevel = false
                         if game.Workspace.Map.Ice.Door.CanCollide == true and game.Workspace.Map.Ice.Door.Transparency == 0 then
-                            repeat wait() Tween(CFrameQBoss.new(4851.8720703125, 5.6514348983765, 718.47094726563)) until (CFrameQBoss.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
+                            repeat wait() Tween(CFrameBoss.new(4851.8720703125, 5.6514348983765, 718.47094726563)) until (CFrameBoss.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
                             wait(1)
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")
-                            EquipWeapon("Key")
-                            local pos2 = CFrameQBoss.new(1347.7124, 37.3751602, -1325.6488)
+                            EquipTool(SelectWeapon)
+                            local pos2 = CFrameBoss.new(1347.7124, 37.3751602, -1325.6488)
                             repeat wait() Tween(pos2) until (pos2.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
                             wait(3)
                         elseif game.Workspace.Map.Ice.Door.CanCollide == false and game.Workspace.Map.Ice.Door.Transparency == 1 then
@@ -2656,7 +2656,7 @@ repeat wait() until game.Players
                                     end
                                 end
                             else
-                                Tween(CFrameQBoss.new(1347.7124, 37.3751602, -1325.6488))
+                                Tween(CFrameBoss.new(1347.7124, 37.3751602, -1325.6488))
                             end
                         else
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
