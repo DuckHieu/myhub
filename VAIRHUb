@@ -3395,7 +3395,7 @@ spawn(function()
     Options.ToggleAutoFarmBoss:SetValue(false)
 	spawn(function()
         while wait() do
-            if _G.AutoBoss and BypassTP then
+            if _G.AutoBoss == true then
                 pcall(function()
                     if game:GetService("Workspace").Enemies:FindFirstChild(_G.SelectBoss) then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -3419,7 +3419,7 @@ spawn(function()
                         end
                     elseif game.ReplicatedStorage:FindFirstChild(_G.SelectBoss) then
 						if ((game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 1500 then
-							Tween(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
+							BTP(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
 						else
 							BTP(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
 					    end
