@@ -2576,7 +2576,7 @@ repeat wait() until game.Players
           BTP(CFrameQ)
           end
     else
-            Tween(CFrameQ)
+            BTP(CFrameQ)
             end
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
@@ -2622,50 +2622,7 @@ repeat wait() until game.Players
     end)
     Options.ToggleAutoSea2:SetValue(false)
 
-    local Sea2 = CFrame.new(1347.7124, 37.3751602, -1325.6488)
-    local a = CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563)
-    spawn(function()
-        while wait() do
-            if _G.AutoSecondSea == true then
-                pcall(function()
-                    CheckLevel()
-                    if game.Players.LocalPlayer.Data.Level.Value >= 700 and World1 then
-                        _G.AutoLevel = false
-                        if game.Workspace.Map.Ice.Door.CanCollide == true and game.Workspace.Map.Ice.Door.Transparency == 0 then
-                            repeat wait() Tween(a) until (CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
-                            wait(1)
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")
-                            EquipTool(SelectWeapon)
-                            repeat wait() Tween(Sea2) until (Sea2.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
-                            wait(3)
-                        elseif game.Workspace.Map.Ice.Door.CanCollide == false and game.Workspace.Map.Ice.Door.Transparency == 1 then
-                            if game:GetService("Workspace").Enemies:FindFirstChild("Ice Admiral") then
-                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                    if v.Name == "Ice Admiral" and v.Humanoid.Health > 0 then
-                                        repeat wait()
-                                            AutoHaki()
-                                            EquipTool(SelectWeapon)
-                                            v.HumanoidRootPart.CanCollide = false
-                                            v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-                                            v.HumanoidRootPart.Transparency = 1
-                                            Tween(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                                            game:GetService("VirtualUser"):CaptureController()
-                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 870),workspace.CurrentCamera.CFrame)
-                                        until v.Humanoid.Health <= 0 or not v.Parent or not _G.AutoSecondSea
-                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
-                                    end
-                                end
-                            else
-                                Tween(Sea2)
-                            end
-                        else
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
-                        end
-                    end
-                end)
-            end
-        end
-    end)
+    
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -2853,7 +2810,7 @@ repeat wait() until game.Players
           CheckLevel(SelectMonster)
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-            Tween(CFrameQ)
+            BTP(CFrameQ)
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
           end
@@ -2926,12 +2883,12 @@ repeat wait() until game.Players
         elseif AutoFarmMasGun and TypeMastery == 'Boss' then
         if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
         CheckBossQuest()
-        if BypassTP then
+        if AutoFarmMasGun and TypeMastery == true then
         if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQBoss.Position).Magnitude > 2000 then
         BTP(CFrameQBoss)
         wait(3)
         elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQBoss.Position).Magnitude < 2000 then
-        Tween(CFrameQBoss)
+        BTP(CFrameQBoss)
         end
         else
           Tween(CFrameQBoss)
@@ -4876,7 +4833,7 @@ ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
     pcall(function()
         if _G.TeleportPly then
-            repeat Tween(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
+            repeat Teleport(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
         end
     end)
 end)
