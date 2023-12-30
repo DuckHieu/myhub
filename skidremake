@@ -98,7 +98,7 @@ end
 function CheckLevel()
 local Lv = game:GetService("Players").LocalPlayer.Data.Level.Value
 if First_Sea then
-if Lv == 1 or Lv <= 9 or SelectMonster == "Bandit" or SelectArea == 'Jungle' then -- Bandit
+if Lv == 0 or Lv <= 0 or SelectMonster == "Bandit" or SelectArea == 'Jungle' then -- Bandit
 Ms = "Bandit"
 NameQuest = "BanditQuest1"
 QuestLv = 1
@@ -254,7 +254,7 @@ CFrameMon = CFrame.new(-4628.0498046875, 866.92877197266, -1931.2352294922)
 if Auto_Farm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
 end
-elseif Lv == 475 or Lv <= 524 or SelectMonster == "Shanda" or SelectArea == 'Sky Island' then -- Shanda
+elseif Lv == 1 or Lv <= 120 or SelectMonster == "Shanda" or SelectArea == 'Sky Island' then -- Shanda
 Ms = "Shanda"
 NameQuest = "SkyExp1Quest"
 QuestLv = 2
@@ -3096,7 +3096,7 @@ spawn(function()
       CheckLevel(SelectMonster)
       if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
       game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-      if BypassTP then
+      if AutoFarmMasDevilFruit == true then
       if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
       BTP(CFrameQ)
       wait(0.2)
