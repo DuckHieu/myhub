@@ -780,6 +780,7 @@ CFrameBoss = CFrame.new(-2844.7307128906, 7.4180502891541, 5356.6723632813)
 elseif SelectBoss == "Vice Admiral" then
 BossMon = "Vice Admiral"
 NameBoss = 'Vice Admiral'
+CFrameBoss = CFrame.new()
 NameQuestBoss = "MarineQuest2"
 QuestLvBoss = 2
 RewardBoss = "Reward:\n$10,000\n180,000 Exp."
@@ -2622,21 +2623,19 @@ repeat wait() until game.Players
     end)
     Options.ToggleAutoSea2:SetValue(false)
 
-    local Sea2 = CFrame.new(1347.7124, 37.3751602, -1325.6488)
-    local a = CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563)
     spawn(function()
         while wait() do
-            if _G.AutoSecondSea == true then
+            if _G.AutoSecondSea then
                 pcall(function()
-                    CheckLevel()
                     if game.Players.LocalPlayer.Data.Level.Value >= 700 and World1 then
                         _G.AutoLevel = false
                         if game.Workspace.Map.Ice.Door.CanCollide == true and game.Workspace.Map.Ice.Door.Transparency == 0 then
-                            repeat wait() Tween(a) until (CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
+                            repeat wait() Tween(CFrameQBoss.new(4851.8720703125, 5.6514348983765, 718.47094726563)) until (CFrameQBoss.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
                             wait(1)
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")
-                            EquipTool(SelectWeapon)
-                            repeat wait() Tween(Sea2) until (Sea2.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
+                            EquipWeapon("Key")
+                            local pos2 = CFrameQBoss.new(1347.7124, 37.3751602, -1325.6488)
+                            repeat wait() Tween(pos2) until (pos2.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
                             wait(3)
                         elseif game.Workspace.Map.Ice.Door.CanCollide == false and game.Workspace.Map.Ice.Door.Transparency == 1 then
                             if game:GetService("Workspace").Enemies:FindFirstChild("Ice Admiral") then
@@ -2646,6 +2645,7 @@ repeat wait() until game.Players
                                             AutoHaki()
                                             EquipTool(SelectWeapon)
                                             v.HumanoidRootPart.CanCollide = false
+                                            Click()
                                             v.HumanoidRootPart.Size = Vector3.new(60,60,60)
                                             v.HumanoidRootPart.Transparency = 1
                                             Tween(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
@@ -2656,7 +2656,7 @@ repeat wait() until game.Players
                                     end
                                 end
                             else
-                                Tween(Sea2)
+                                Tween(CFrameQBoss.new(1347.7124, 37.3751602, -1325.6488))
                             end
                         else
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
