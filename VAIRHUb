@@ -2622,7 +2622,8 @@ repeat wait() until game.Players
     end)
     Options.ToggleAutoSea2:SetValue(false)
 
-    local Sea2 = CFrameBoss.new(1347.7124, 37.3751602, -1325.6488)   
+    local Sea2 = CFrame.new(1347.7124, 37.3751602, -1325.6488)
+    local a = CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563)
     spawn(function()
         while wait() do
             if _G.AutoSecondSea == true then
@@ -2631,7 +2632,7 @@ repeat wait() until game.Players
                     if game.Players.LocalPlayer.Data.Level.Value >= 700 and World1 then
                         _G.AutoLevel = false
                         if game.Workspace.Map.Ice.Door.CanCollide == true and game.Workspace.Map.Ice.Door.Transparency == 0 then
-                            repeat wait() Tween(Sea2) until (CFrameBoss.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
+                            repeat wait() Tween(a) until (CFrame.new(4851.8720703125, 5.6514348983765, 718.47094726563).Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 or not _G.AutoSecondSea
                             wait(1)
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("DressrosaQuestProgress","Detective")
                             EquipTool(SelectWeapon)
@@ -2852,7 +2853,7 @@ repeat wait() until game.Players
           CheckLevel(SelectMonster)
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-            BTP(CFrameQ)
+            Tween(CFrameQ)
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
           end
