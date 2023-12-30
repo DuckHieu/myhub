@@ -2572,14 +2572,13 @@ repeat wait() until game.Players
           if _G.AutoLevel == true then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
           BTP(CFrameQ)
-          wait(2)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
           BTP(CFrameQ)
-          wait(2)
+          
           end
     else
             BTP(CFrameQ)
-            wait(2)
+            
             end
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
