@@ -4875,7 +4875,7 @@ ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
     pcall(function()
         if _G.TeleportPly then
-            repeat BTP(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
+            repeat Tween(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
         end
     end)
 end)
