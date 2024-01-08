@@ -4825,7 +4825,7 @@ ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
     pcall(function()
         if _G.TeleportPly then
-            repeat Tween(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
+            repeat BTPZ(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
         end
     end)
 end)
@@ -5266,7 +5266,7 @@ spawn(function()
         if _G.Tweenfruit then
             for i,v in pairs(game.Workspace:GetChildren()) do
                 if string.find(v.Name, "Fruit") then
-                    TP1(v.Handle.CFrame)
+                    TP(v.Handle.CFrame)
                 end
             end
         end
