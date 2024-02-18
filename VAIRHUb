@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Vair Hub",
+    Title = "Test",
     SubTitle = "https://discord.gg/4M7vR7n8es",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
