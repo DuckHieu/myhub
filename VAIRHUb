@@ -3,10 +3,10 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Rimus",
-    SubTitle = "by Akiki",
+    Title = "Fai Fao Hub",
+    SubTitle = "by DauCoGhe",
     TabWidth = 160,
-    Size = UDim2.fromOffset(350, 200),
+    Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
@@ -92,13 +92,13 @@ QuestLv = 1
 NameMon = "Monkey"
 CFrameQ = CFrame.new(-1601.6553955078, 36.85213470459, 153.38809204102)
 CFrameMon = CFrame.new(-1448.1446533203, 50.851993560791, 63.60718536377)
-elseif Lv == 15 or Lv <= 29 or SelectMonster == "Gorilla" or SelectArea == 'Jungle' then -- Gorilla
-Ms = "Gorilla"
-NameQuest = "JungleQuest"
-QuestLv = 2
-NameMon = "Gorilla"
-CFrameQ = CFrame.new(-1601.6553955078, 36.85213470459, 153.38809204102)
-CFrameMon = CFrame.new(-1142.6488037109, 40.462348937988, -515.39227294922)
+elseif Lv == 15 or Lv <= 149 or SelectMonster == "Gorilla" or SelectArea == 'Jungle' then -- Gorilla
+    Ms = "Sky Bandit"
+    NameQuest = "SkyQuest"
+    QuestLv = 1
+    NameMon = "Sky Bandit"
+    CFrameQ = CFrame.new(-4842.1372070313, 717.69543457031, -2623.0483398438)
+    CFrameMon = CFrame.new(-4955.6411132813, 365.46365356445, -2908.1865234375)
 elseif Lv == 30 or Lv <= 39 or SelectMonster == "Pirate" or SelectArea == 'Buggy' then -- Pirate
 Ms = "Pirate"
 NameQuest = "BuggyQuest1"
