@@ -4419,21 +4419,7 @@ end
 local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
 CamShake:Stop()
 
-    local ToggleWhiteScreen = Tabs.Setting:AddToggle("ToggleWhiteScreen", {Tittle = "White Screen", Default = false})
-    ToggleWhiteScreen:OnChanged(function(Value)
-        trangnhutinh = Value
-    end)
-    Options.ToggleWhiteScreen:SetValue(Value)
 
-    if trangnhutinh == true then
-        game:GetService("RunService"):Set3dRenderingEnabled(false)
-    elseif trangnhutinh == false then
-        game:GetService("RunService"):Set3dRenderingEnabled(true)
-    end
-    end
-    
-    
-    
     
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = false })
     ToggleBringMob:OnChanged(function(Value)
@@ -4493,7 +4479,7 @@ CamShake:Stop()
         BypassTP = true
     end)
     Options.ToggleBypassTP:SetValue(false)
-
+end
 
 
 
