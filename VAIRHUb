@@ -4474,7 +4474,7 @@ CamShake:Stop()
 
 
     local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Bypass Tp", Default = false })
-    ToggleBypassTP:OnChanged(function(True)
+    ToggleBypassTP:OnChanged(function(Value)
         BypassTP = true
     end)
     Options.ToggleBypassTP:SetValue(false)
