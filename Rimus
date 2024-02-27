@@ -2738,8 +2738,8 @@ local posZ = 0
           repeat game:GetService("RunService").Heartbeat:wait()
           AutoHaki()
           EquipTool(SelectWeapon)
-          BTPZ(v.HumanoidRootPart.CFrame * Pos)
-          v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+          BTPZ(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+          v.HumanoidRootPart.Size = Vector3.new(1, 2, 1)
           v.HumanoidRootPart.Transparency = 1
           v.Humanoid.JumpPower = 0
           v.Humanoid.WalkSpeed = 0
