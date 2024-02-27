@@ -4345,7 +4345,7 @@ end
 
     local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
-        danhnhanhvailon = vu
+        _G.danhnhanhvailon = vu
     end)
     Options.ToggleFastAttack:SetValue(true)
 
@@ -4411,12 +4411,7 @@ end
             end
         end
     end
-    local cac
-    if SuperFastMode then 
-        cac=task.wait
-    else
-        cac=wait
-    end
+    
     
 
 
