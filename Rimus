@@ -3481,7 +3481,7 @@ spawn(function()
                                         repeat task.wait()
                                             AutoHaki()
                                             EquipTool(SelectWeapon)
-                                            (v.HumanoidRootPart.CFrame * Pos)
+                                            Tween(v.HumanoidRootPart.CFrame * Pos)
 			                                v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
                                             v.HumanoidRootPart.Transparency = 1
                                             v.Humanoid.JumpPower = 0
