@@ -3,10 +3,10 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "Fai Fao Hub",
-    SubTitle = "by DauCoGhe",
-    TabWidth = 160,
-    Size = UDim2.fromOffset(450, 300),
+    Title = "Rimus",
+    SubTitle = "by Akiki",
+    TabWidth = 180,
+    Size = UDim2.fromOffset(350, 200),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
@@ -2646,8 +2646,8 @@ end
 coroutine.wrap(YTZCAJC_fake_script)()
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- Hehe
-local posX = 0
-local posY = 30
+local posX = 5
+local posY = 1
 local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
