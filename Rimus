@@ -4421,9 +4421,9 @@ CamShake:Stop()
 
 
 
-    local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
+    local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = false })
     ToggleBringMob:OnChanged(function(Value)
-        getgenv().bringnatconcac = Value
+        bringnatconcac = Value
     end)
     Options.ToggleBringMob:SetValue(true)
     
