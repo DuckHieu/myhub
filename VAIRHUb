@@ -4345,7 +4345,7 @@ end
 
     local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
-        danhnhanhvailon() = vu
+        danhnhanhvailon = vu
     end)
     Options.ToggleFastAttack:SetValue(true)
 
