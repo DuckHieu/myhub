@@ -6,7 +6,7 @@ local Window = Fluent:CreateWindow({
     Title = "Rimus Hub",
     SubTitle = "by Akiki",
     TabWidth = 160,
-    Size = UDim2.fromOffset(350, 400),
+    Size = UDim2.fromOffset(350, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
@@ -2738,7 +2738,7 @@ local posZ = 0
           repeat game:GetService("RunService").Heartbeat:wait()
           AutoHaki()
           EquipTool(SelectWeapon)
-          BTPZ(FarmPos * Pos)
+          BTPZ(v.HumanoidRootPart.CFrame * Pos)
           v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
           v.HumanoidRootPart.Transparency = 1
           v.Humanoid.JumpPower = 0
@@ -3481,7 +3481,7 @@ spawn(function()
                                         repeat task.wait()
                                             AutoHaki()
                                             EquipTool(SelectWeapon)
-                                            BTPZ(v.CFrame * CFrame.new(posX,posY,posZ))
+                                            (v.HumanoidRootPart.CFrame * Pos)
 			                                v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
                                             v.HumanoidRootPart.Transparency = 1
                                             v.Humanoid.JumpPower = 0
