@@ -2191,7 +2191,7 @@ end
 
 --------bring Mob Island
 
-_G.BringMonster = true
+_G.BringMonster = false
 
 spawn(function()
     while task.wait() do
@@ -4423,78 +4423,87 @@ CamShake:Stop()
 
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = false })
     ToggleBringMob:OnChanged(function(Value)
-        bringnatconcac = Value
+        getgenv().BringMobSkidCuaSeaHub = Value
     end)
     Options.ToggleBringMob:SetValue(true)
     
       
-        function isnetworkowner(object)
-            if isnetworkowner then
-                return isnetworkowner(object)
-            else
-                if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= RadiusBring then
-                    return true
-                end
-                return false
+    function function0(a)
+        if a:FindFirstChild("Humanoid") and a:FindFirstChild("HumanoidRootPart") and CheckExploitNgu(a.HumanoidRootPart) then
+            return true
+        else
+            return false
+        end
+    end
+    function function01(aj)
+        tb2 = 0
+        for r, v in pairs(aj) do
+            if v > tb2 then
+                tb2 = v
             end
         end
-
-
-        getgenv().bringnatconcac = function(F, d)
-            coroutine.wrap(function() 
-                pcall(function() 
-                    for a, b in pairs(workspace.Enemies:GetChildren()) do 
-                        if b:FindFirstChild("Humanoid") and b:FindFirstChild("HumanoidRootPart") then
-                            if isnetworkowner(b:FindFirstChild("HumanoidRootPart")) or isnetworkowner(b.HumanoidRootPart) then
-                                b:FindFirstChild("HumanoidRootPart").CanCollide = false
-                                b:FindFirstChild("HumanoidRootPart").Transparency = 1
-                                b.HumanoidRootPart.Size = Vector3.new(60,60,60)
-                                b.HumanoidRootPart.CanCollide = false
-                                b.Humanoid.WalkSpeed = 0
-                                b.HumanoidRootPart.CanCollide = false
-                                b.HumanoidRootPart.Transparency = 1
-                                if not b:FindFirstChild("HumanoidRootPart"):FindFirstChild("BV")then
-                                    local m = Instance.new("BodyVelocity")
-                                    m.Parent = b:FindFirstChild("HumanoidRootPart")
-                                    m.Name = "BV"
-                                    m.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-                                    m.Velocity = Vector3.new(0,0,0)
-                                end
-                                if b:FindFirstChild("Humanoid"):FindFirstChild("Animator")then
-                                    b:FindFirstChild("Humanoid"):FindFirstChild("Animator"):Remove()
-                                end
-                                    b.Humanoid:ChangeState(11)
-                                    b.Humanoid:ChangeState(15)
-                                    b:FindFirstChild("HumanoidRootPart").CFrame = F
-                                elseif (b.Position-d.HumanoidRootPart.Position).magnitude < RadiusBring then
-                                    b:FindFirstChild("HumanoidRootPart").CanCollide = false
-                                    b:FindFirstChild("HumanoidRootPart").Transparency = 1
-                                    b.HumanoidRootPart.Size = Vector3.new(60,60,60)
-                                    b.HumanoidRootPart.CanCollide = false
-                                    b.Humanoid.WalkSpeed = 0
-                                    b.HumanoidRootPart.CanCollide = false
-                                    b.HumanoidRootPart.Transparency = 1
-                                    if not b:FindFirstChild("HumanoidRootPart"):FindFirstChild("BV")then
-                                        local u = Instance.new("BodyVelocity")
-                                        u.Parent = b:FindFirstChild("HumanoidRootPart")
-                                        u.Name = "BV"
-                                        u.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-                                        u.Velocity = Vector3.new(0,0,0)
-                                    end
-                                    if b:FindFirstChild("Humanoid"):FindFirstChild("Animator")then
-                                        b:FindFirstChild("Humanoid"):FindFirstChild("Animator"):Remove()
-                                    end
-                                    b.Humanoid:ChangeState(11)
-                                    b.Humanoid:ChangeState(15)
-                                    b:FindFirstChild("HumanoidRootPart").CFrame = F
-                                    sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-                                    setscriptable(game.Players.LocalPlayer,"SimulationRadius",true)
-                                end
+        return tb2
+    end
+    function function1()
+        local s = {}
+        local ak = false
+        for al, am in pairs(game.workspace.Enemies:GetChildren()) do
+            if function0(am) then
+                for al, an in pairs(game.workspace.Enemies:GetChildren()) do
+                    if function0(an) and function0(am) then
+                        if (an.HumanoidRootPart.Position - am.HumanoidRootPart.Position).Magnitude < 350 then
+                            if not s[am.HumanoidRootPart.CFrame] then
+                                s[am.HumanoidRootPart.CFrame] = 1
+                            else
+                                s[am.HumanoidRootPart.CFrame] = s[am.HumanoidRootPart.CFrame] + 1
                             end
                         end
-                    end)
-            end)()
+                    end
+                end
+            end
         end
+        local s2 = function01(s)
+        for r, v in pairs(s) do
+            if v == s2 then
+                ak = r
+            end
+        end
+        return ak
+    end
+    function BringMobSkidCuaSeaHub()
+        local c = function1()
+        local ao = game.workspace.Enemies:GetChildren()
+        if #ao > 1 then
+            for ap = 1, #ao do
+                for k, v in pairs(game.workspace.Enemies:GetChildren()) do
+                    if function0(v) and (v.HumanoidRootPart.Position - c.Position).Magnitude < 350 then
+                        v.HumanoidRootPart.CFrame = c
+                        v.Humanoid:ChangeState(11)
+                        v.HumanoidRootPart.CanCollide = false
+                        v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                        v.HumanoidRootPart.Transparency = 1
+                        for al, f in pairs(v:GetChildren()) do
+                            if v:IsA("BasePart") then
+                                v.Velocity = Vector3.new(0, 0, 0)
+                                v.CanCollide = 0
+                                v.Anchored = true
+                            end
+                        end
+                        if v:FindFirstChild("Humanoid") then
+                            v.Humanoid.WalkSpeed = 0
+                            v.Humanoid.JumpPower = 0
+                        else
+                            return
+                        end
+                        if v.Humanoid:FindFirstChild("Animator") then
+                            v.Humanoid.Animator:Destroy()
+                        end
+                        v.Humanoid:ChangeState(11)
+                    end
+                end
+            end
+        end
+    end
 
 
 
@@ -5892,5 +5901,36 @@ while wait() do
 end
 end)
 
+
+function CheckExploitNgu(cq)
+    local cr = is_fluxus_function and "exploit dot"
+    if cr ~= "exploit dot" then
+        return isnetworkowner(cq)
+    else
+        min = math.huge
+        nouwegheruqigheri = ""
+        for r, v in pairs(game.Players:GetChildren()) do
+            pcall(
+                function()
+                    if (v.Character.HumanoidRootPart - cq.Position).Magnitude < min then
+                        min = (v.Character.HumanoidRootPart - cq.Position).Magnitude
+                    end
+                end
+            )
+        end
+        for r, v in pairs(game.Players:GetChildren()) do
+            pcall(
+                function()
+                    if (v.Character.HumanoidRootPart - cq.Position).Magnitude <= min then
+                        nouwegheruqigheri = v.Name
+                    end
+                end
+            )
+        end
+        if game.Players.LocalPlayer.Name == nouwegheruqigheri then
+            return true
+        end
+    end
+end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
