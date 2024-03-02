@@ -6,21 +6,22 @@ local Window = Fluent:CreateWindow({
     Title = "Rimus Hub",
     SubTitle = "by Akiki",
     TabWidth = 160,
-    Size = UDim2.fromOffset(350, 400),
+    Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
-    Teleport = Window:AddTab({ Title = "Teleport", Icon = "palmtree" }),
-    Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
-    Raid = Window:AddTab({ Title = "Dungeon", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "rbxassetid://16058570512" }),
+    Setting = Window:AddTab({ Title = "Setting", Icon = "rbxassetid://16058570512" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://16058570512" }),
+    SeaFarm = Window:AddTab({ Title = "Sea Farm", Icon = "rbxassetid://16058570512" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://16058570512" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://16058570512" }),
+    Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "rbxassetid://16058570512" }),
+    Raid = Window:AddTab({ Title = "Dungeon", Icon = "rbxassetid://16058570512" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "rbxassetid://16058570512" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://16058570512" }),
 }
 local Options = Fluent.Options
 
@@ -85,20 +86,14 @@ QuestLv = 1
 NameMon = "Bandit"
 CFrameQ = CFrame.new(1060.9383544922, 16.455066680908, 1547.7841796875)
 CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953)
-elseif Lv == 10 or Lv <= 14 or SelectMonster == "Monkey" or SelectArea == 'Jungle' then -- Monkey
+elseif Lv == 10 or Lv <= 30 or SelectMonster == "Monkey" or SelectArea == 'Jungle' then -- Monkey
 Ms = "Monkey"
 NameQuest = "JungleQuest"
 QuestLv = 1
 NameMon = "Monkey"
 CFrameQ = CFrame.new(-1601.6553955078, 36.85213470459, 153.38809204102)
 CFrameMon = CFrame.new(-1448.1446533203, 50.851993560791, 63.60718536377)
-elseif Lv == 15 or Lv <= 29 or SelectMonster == "Gorilla" or SelectArea == 'Jungle' then -- Gorilla
-Ms = "Gorilla"
-NameQuest = "JungleQuest"
-QuestLv = 2
-NameMon = "Gorilla"
-CFrameQ = CFrame.new(-1601.6553955078, 36.85213470459, 153.38809204102)
-CFrameMon = CFrame.new(-1142.6488037109, 40.462348937988, -515.39227294922)
+
 elseif Lv == 30 or Lv <= 39 or SelectMonster == "Pirate" or SelectArea == 'Buggy' then -- Pirate
 Ms = "Pirate"
 NameQuest = "BuggyQuest1"
@@ -149,12 +144,12 @@ NameMon = "Chief Petty Officer"
 CFrameQ = CFrame.new(-5035.49609375, 28.677835464478, 4324.1840820313)
 CFrameMon = CFrame.new(-4931.1552734375, 65.793113708496, 4121.8393554688)
 elseif Lv == 150 or Lv <= 174 or SelectMonster == "Sky Bandit" or SelectArea == 'Sky' then -- Sky Bandit
-Ms = "Sky Bandit"
-NameQuest = "SkyQuest"
-QuestLv = 1
-NameMon = "Sky Bandit"
-CFrameQ = CFrame.new(-4842.1372070313, 717.69543457031, -2623.0483398438)
-CFrameMon = CFrame.new(-4955.6411132813, 365.46365356445, -2908.1865234375)
+    Ms = "Sky Bandit"
+    NameQuest = "SkyQuest"
+    QuestLv = 1
+    NameMon = "Sky Bandit"
+    CFrameQ = CFrame.new(- 4842.1372070313, 717.69543457031, - 2623.0483398438)
+    CFrameMon = CFrame.new(- 4955.6411132813, 365.46365356445, - 2908.1865234375)
 elseif Lv == 175 or Lv <= 189 or SelectMonster == "Dark Master" or SelectArea == 'Sky' then -- Dark Master
 Ms = "Dark Master"
 NameQuest = "SkyQuest"
@@ -1069,7 +1064,7 @@ MPos = CFrame.new(-13545,470,-6917)
 SP = "Default"
 end
 end
-
+  
 
 
 
@@ -2110,7 +2105,7 @@ spawn(function()
    spawn(function()
 			while task.wait() do
 				pcall(function()
-					if _G.TeleportIsland or _G.dao or _G.AutoMirage or AutoFarmAcient or _G.AutoQuestRace or Auto_Law or _G.AutoAllBoss or _G.Autotushita or _G.AutoHolyTorch or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or AutoFarmNearestMob or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+					if _G.TeleportIsland or _G.SkipFarm or _G.dao or _G.AutoMirage or AutoFarmAcient or _G.AutoQuestRace or Auto_Law or _G.AutoAllBoss or _G.Autotushita or _G.AutoHolyTorch or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or AutoFarmNearestMob or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
 						if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 							local Noclip = Instance.new("BodyVelocity")
 							Noclip.Name = "BodyClip"
@@ -2132,7 +2127,7 @@ spawn(function()
 spawn(function()
   pcall(function()
     game:GetService("RunService").Stepped:Connect(function()
-      if _G.TeleportIsland or _G.dao or AutoFarmAcient or _G.AutoMirage or Auto_Law or _G.AutoQuestRace or _G.AutoAllBoss or _G.AutoHolyTorch or _G.Autotushita or _G.farmpiranya or _G.AutoTerrorshark or AutoFarmNearestMob or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+      if _G.TeleportIsland or _G.SkipFarm or _G.dao or AutoFarmAcient or _G.AutoMirage or Auto_Law or _G.AutoQuestRace or _G.AutoAllBoss or _G.AutoHolyTorch or _G.Autotushita or _G.farmpiranya or _G.AutoTerrorshark or AutoFarmNearestMob or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
       for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
       if v:IsA("BasePart") then
       v.CanCollide = false
@@ -2162,7 +2157,7 @@ end
 -----Click
 
 function Click()
-	if not _G.FastAttack then
+	if not danhnhanhvailon then
 		local Module = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework)
 		local CombatFramework = debug.getupvalues(Module)[2]
 		local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
@@ -2567,6 +2562,7 @@ function BTP(p)
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 ---Close gui
+
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -2578,18 +2574,17 @@ ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton.Parent = ScreenGui
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
-ImageButton.Size = UDim2.new(0.0627121851, 0, 0.107579626, 0)
+ImageButton.BackgroundColor3 = Color3.fromRGB(30, 20, 20)
+ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ImageButton.Size = UDim2.new(0, 50, 0, 50)
 ImageButton.Image = "rbxassetid://16058570512"
 
-UICorner.CornerRadius = UDim.new(0, 30)
+UICorner.CornerRadius = UDim.new(0, 15)
 UICorner.Parent = ImageButton
 
 UIGradient.Parent = ImageButton
 
 UIAspectRatioConstraint.Parent = ImageButton
-UIAspectRatioConstraint.AspectRatio = 0.988
 
 
 local function HCEGY_fake_script()
@@ -2650,6 +2645,7 @@ local posY = 30
 local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
+    Tabs.Main:AddSection("Farming")
     Tabs.Main:AddParagraph({
         Title = "Farming",
         Content = "Auto Farm"
@@ -2712,7 +2708,7 @@ local posZ = 0
     end)
     Options.ToggleAutoFarmLevel:SetValue(false)
     spawn(function()
-        while task.wait() do
+        while task.wait(0.5) do
         if AutoFarmQuest then
         pcall(function()
           CheckLevel()
@@ -2721,6 +2717,7 @@ local posZ = 0
           if BypassTP then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
           BTP(CFrameQ)
+          wait(2)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
           Tween(CFrameQ)
           end
@@ -2737,8 +2734,8 @@ local posZ = 0
           repeat game:GetService("RunService").Heartbeat:wait()
           AutoHaki()
           EquipTool(SelectWeapon)
-          BTPZ(v.HumanoidRootPart.CFrame * Pos)
-          v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+          Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX, posY, posZ))
+          v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
           v.HumanoidRootPart.Transparency = 1
           v.Humanoid.JumpPower = 0
           v.Humanoid.WalkSpeed = 0
@@ -2754,7 +2751,7 @@ local posZ = 0
           for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()) do
           if string.find(v.Name,NameMon) then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude >= 10 then
-            Tween(v.CFrame * CFrame.new(posX,posY,posZ))
+            Tween(v.CFrame * CFrame.new(posX, posY, posZ))
           end
           end
           end
@@ -2765,6 +2762,65 @@ local posZ = 0
         end
         end)
 
+        local ToggleSkipFarm = Tabs.Main:AddToggle("ToggleSkipFarm", {Title = "Skip Level (1-150)", Default = false })
+        ToggleSkipFarm:OnChanged(function(Value)
+        _G.SkipFarm = Value
+    end)
+    
+    local Skip = CFrame.new(-7685.1474609375, 5601.0751953125, -441.38876342773)
+    local Akiki1 = "Shanda"
+    local QuestSkip = CFrame.new(-7863.1596679688, 5545.5190429688, -378.42266845703)
+    spawn(function()
+            while task.wait() do
+                if _G.SkipFarm then
+                    pcall(function()
+                        
+                        if BypassTP then
+                            if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Skip.Position).Magnitude > 3500 then
+                                BTP(QuestSkip)
+                            elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Skip.Position).Magnitude < 3500 then
+                                Tween(QuestSkip)
+                            end
+                        else
+                            Tween(QuestSkip)
+                        end
+                        if game:GetService("Workspace").Enemies:FindFirstChild(Akiki1) then
+                            for i, v in pairs(game.Workspace.Enemies:GetChildren()) do
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    if v.Name == Akiki1 then
+                                        repeat
+                                            wait(0.01)
+                                            AkikiFast()
+                                            AutoHaki()
+                                            bucailon = true
+                                            EquipTool(SelectWeapon)
+                                            Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX, posY, posZ))
+                                            v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                            v.HumanoidRootPart.Transparency = 1
+                                            v.Humanoid.JumpPower = 0
+                                            v.Humanoid.WalkSpeed = 0
+                                            v.HumanoidRootPart.CanCollide = false
+                                            FarmPos = v.HumanoidRootPart.CFrame
+                                            MonFarm = v.Name
+              --Click
+                                        until not _G.SkipFarm or not v.Parent or v.Humanoid.Health <= 0
+                                        bucailon = false
+                                    end
+                                end
+                            end
+                        else
+                            for a, b in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()) do
+                                if string.find(b.Name, NameMon) then
+                                    if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - b.Position).Magnitude >= 10 then
+                                        Tween(b.CFrame * CFrame.new(posX, posY, posZ))
+                                    end
+                                end
+                            end
+                        end
+                    end)
+                end
+            end
+        end)
 
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
         game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
@@ -3105,7 +3161,7 @@ local posZ = 0
             AutoHaki()
           EquipTool(SelectWeapon)
           Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-          v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+          v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
           v.HumanoidRootPart.Transparency = 1
           v.Humanoid.JumpPower = 0
           v.Humanoid.WalkSpeed = 0
@@ -3480,8 +3536,8 @@ spawn(function()
                                         repeat task.wait()
                                             AutoHaki()
                                             EquipTool(SelectWeapon)
-                                            Tween(v.HumanoidRootPart.CFrame * Pos)
-			                                v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                                            Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX, posY, posZ))
+			                                v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
                                             v.HumanoidRootPart.Transparency = 1
                                             v.Humanoid.JumpPower = 0
                                             v.Humanoid.WalkSpeed = 0
@@ -3526,7 +3582,7 @@ spawn(function()
     AutoHaki()
     EquipTool(SelectWeapon)
     Tween(v.HumanoidRootPart.CFrame * Pos)
-    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+    v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
     v.HumanoidRootPart.Transparency = 1
     v.Humanoid.JumpPower = 0
     v.Humanoid.WalkSpeed = 0
@@ -3568,7 +3624,7 @@ spawn(function()
     end
     end
     else
-      local cakepos = CFrame.new(-2077, 252, -12373)
+      local cakepos = CFrame.new(- 2142.66821, 71.2588654, - 12327.4619, 0.996939838, - 4.33107843e-08, 0.078172572, 4.20252917e-08, 1, 1.80894251e-08, - 0.078172572, - 1.47488439e-08, 0.996939838)
     if BypassTP then
     if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - cakepos.Position).Magnitude > 2000 then
     BTP(cakepos)
@@ -3631,7 +3687,7 @@ spawn(function()
           MaterialMon(SelectMaterial)
           if BypassTP then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude > 3500 then
-          BTP(MPos)
+          Tween(MPos)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude < 3500 then
           Tween(MPos)
           end
@@ -3671,6 +3727,16 @@ spawn(function()
         end
         end
       end)
+
+
+
+
+
+
+
+
+
+      
 if Third_Sea then
 
       Tabs.Main:AddParagraph({
@@ -4344,72 +4410,83 @@ end
 
     local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
-        _G.danhnhanhvailon = vu
+        _G.AkikiFast = vu
     end)
     Options.ToggleFastAttack:SetValue(true)
 
-    local SuperFastMode = false -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
+    local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
+CamShake:Stop()
+local SuperFastMode = true -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
 
-    
-    local plr = game.Players.LocalPlayer
-    
-    local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-    local CbFw2 = CbFw[2]
-    
-    function GetCurrentBlade() 
-        local p13 = CbFw2.activeController
-        local ret = p13.blades[1]
-        if not ret then return end
-        while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-        return ret
-    end
-    function danhnhanhvailon() 
-        local AC = CbFw2.activeController
-        for i = 1, 1 do 
-            local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-                plr.Character,
-                {plr.Character.HumanoidRootPart},
-                60
-            )
-            local cac = {}
-            local hash = {}
-            for k, v in pairs(bladehit) do
-                if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                    table.insert(cac, v.Parent.HumanoidRootPart)
-                    hash[v.Parent] = true
-                end
+
+local plr = game.Players.LocalPlayer
+
+local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
+local CbFw2 = CbFw[2]
+
+function GetCurrentBlade() 
+    local p13 = CbFw2.activeController
+    local ret = p13.blades[1]
+    if not ret then return end
+    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
+    return ret
+end
+function AkikiFast() 
+    local AC = CbFw2.activeController
+    for i = 1, 1 do 
+        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
+            plr.Character,
+            {plr.Character.HumanoidRootPart},
+            60
+        )
+        local cac = {}
+        local hash = {}
+        for k, v in pairs(bladehit) do
+            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
+                table.insert(cac, v.Parent.HumanoidRootPart)
+                hash[v.Parent] = true
             end
-            bladehit = cac
-            if #bladehit > 0 then
-                local u8 = debug.getupvalue(AC.attack, 5)
-                local u9 = debug.getupvalue(AC.attack, 6)
-                local u7 = debug.getupvalue(AC.attack, 4)
-                local u10 = debug.getupvalue(AC.attack, 7)
-                local u12 = (u8 * 798405 + u7 * 727595) % u9
-                local u13 = u7 * 798405
-                (function()
-                    u12 = (u12 * u9 + u13) % 1099511627776
-                    u8 = math.floor(u12 / u9)
-                    u7 = u12 - u8 * u9
-                end)()
-                u10 = u10 + 1
-                debug.setupvalue(AC.attack, 5, u8)
-                debug.setupvalue(AC.attack, 6, u9)
-                debug.setupvalue(AC.attack, 4, u7)
-                debug.setupvalue(AC.attack, 7, u10)
-                pcall(function()
-                    for k, v in pairs(AC.animator.anims.basic) do
-                        v:Play()
-                    end
-                end)
-                if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                    game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
+        end
+        bladehit = cac
+        if #bladehit > 0 then
+            local u8 = debug.getupvalue(AC.attack, 5)
+            local u9 = debug.getupvalue(AC.attack, 6)
+            local u7 = debug.getupvalue(AC.attack, 4)
+            local u10 = debug.getupvalue(AC.attack, 7)
+            local u12 = (u8 * 798405 + u7 * 727595) % u9
+            local u13 = u7 * 798405
+            (function()
+                u12 = (u12 * u9 + u13) % 1099511627776
+                u8 = math.floor(u12 / u9)
+                u7 = u12 - u8 * u9
+            end)()
+            u10 = u10 + 1
+            debug.setupvalue(AC.attack, 5, u8)
+            debug.setupvalue(AC.attack, 6, u9)
+            debug.setupvalue(AC.attack, 4, u7)
+            debug.setupvalue(AC.attack, 7, u10)
+            pcall(function()
+                for k, v in pairs(AC.animator.anims.basic) do
+                    v:Play()
                 end
+            end)
+            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
+                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
+                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
+                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
             end
         end
     end
+end
+local cac
+if SuperFastMode then 
+    cac=task.wait
+else
+    cac=wait
+end
+
+        
+        
     
     
 
@@ -4427,48 +4504,46 @@ CamShake:Stop()
     end)
     Options.ToggleBringMob:SetValue(true)
     
-    task.spawn(function()
-        while task.wait() do
-        if bucailon then
-        pcall(function()
-          for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-          if not string.find(v.Name,"Boss") and v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
-          if InMyNetWork(v.HumanoidRootPart) then
-            if InMyNetWork(v.HumanoidRootPart) then
-          v.HumanoidRootPart.CFrame = FarmPos
-          v.HumanoidRootPart.CanCollide = false
-          v.HumanoidRootPart.Size = Vector3.new(1,1,1)
-          end
+    spawn(function()
+        while wait() do
+            pcall(function()
+                for L_512_forvar0, L_513_forvar1 in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                    if bucailon then
+                        if L_513_forvar1.Name == MonFarm and L_513_forvar1:FindFirstChild("Humanoid") and L_513_forvar1.Humanoid.Health > 0 then
+                            if L_513_forvar1.Name == "Factory Staff" then
+                                if (L_513_forvar1.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 500 then
+                                    L_513_forvar1.Head.CanCollide = false
+                                    L_513_forvar1.HumanoidRootPart.CanCollide = false
+                                    L_513_forvar1.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                                    L_513_forvar1.HumanoidRootPart.CFrame = FarmPos
+                                    if L_513_forvar1.Humanoid:FindFirstChild("Animator") then
+                                        L_513_forvar1.Humanoid.Animator:Destroy()
+                                    end
+                                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                end
+                            elseif L_513_forvar1.Name == MonFarm then
+                                if (L_513_forvar1.HumanoidRootPart.Position - FarmPos.Position).Magnitude <= 450 then
+                                    L_513_forvar1.Head.CanCollide = false
+                                    L_513_forvar1.HumanoidRootPart.CanCollide = false
+                                    L_513_forvar1.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                                    L_513_forvar1.HumanoidRootPart.CFrame = FarmPos
+                                    if L_513_forvar1.Humanoid:FindFirstChild("Animator") then
+                                        L_513_forvar1.Humanoid.Animator:Destroy()
+                                    end
+                                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
         end
-          end
-          end
-          end)
-        end
+    end)
 
-    end
-        end)
-      
-      task.spawn(function()
-        while true do wait()
-        if setscriptable then
-        setscriptable(game.Players.LocalPlayer,"SimulationRadius",true)
-        end
-        if sethiddenproperty then
-        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-        end
-        end
-        end)
-      
-      function InMyNetWork(object)
-      if isnetworkowner then
-      return isnetworkowner(object)
-      else
-        if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
-      return true
-      end
-      return false
-      end
-      end
+
+
+
+    
     
 
 
@@ -4478,7 +4553,7 @@ CamShake:Stop()
     ToggleBypassTP:OnChanged(function(Value)
         BypassTP = true
     end)
-    Options.ToggleBypassTP:SetValue(false)
+    Options.ToggleBypassTP:SetValue(Value)
 end
 
 
@@ -4498,6 +4573,7 @@ ToggleRemove:OnChanged(function(Value)
             end
         end
         end)
+
 
 
 
@@ -5871,4 +5947,19 @@ end)
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
---shop
+-------------------Boat------------------------------------------------------------------------------------
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
