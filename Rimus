@@ -2803,10 +2803,10 @@ local posZ = 0
                                             FarmPos = v.HumanoidRootPart.CFrame
                                             MonFarm = v.Name
               --Click
-                                        until not _G.SkipFarm or not v.Parent or Lv == 150 or Lv <= 174 or SelectMonster == "Sky Bandit" or SelectArea == 'Sky' or v.Humanoid.Health <= 0
-                                        bucailon = false
-                                        _G.SkipFarm = false
-                                        AutoFarmQuest = true
+                                        until not _G.SkipFarm or not v.Parent or game.Players.localPlayer.Data.Level.Value == 150 or Lv <= 174 or SelectMonster == "Sky Bandit" or SelectArea == 'Sky' or v.Humanoid.Health <= 0
+                                        bucailon = true
+                                        
+                                                 
                                     end
                                 end
                             end
@@ -2825,7 +2825,20 @@ local posZ = 0
                 end
             end
         end)
-
+        spawn(function()
+            while task.wait() do
+                if _G.Aki1 then
+                    pcall(function()
+                        _G.SkipLevel = true
+                        if game.Players.localPlayer.Data.Level.Value == 150 or Lv <= 174 then
+                            _G.SkipLevel = false
+                            AutoFarmQuest = true
+                        end
+                    end)
+                end
+            end
+        end)   
+        
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
         game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
     end
