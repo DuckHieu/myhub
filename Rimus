@@ -2805,7 +2805,8 @@ local posZ = 0
               --Click
                                         until not _G.SkipFarm or not v.Parent or game.Players.localPlayer.Data.Level.Value == 150 or Lv <= 174 or SelectMonster == "Sky Bandit" or SelectArea == 'Sky' or v.Humanoid.Health <= 0
                                         bucailon = true
-                                        
+                                        _G.SkipFarm = false
+                                        Tween(Skip)
                                                  
                                     end
                                 end
@@ -2827,19 +2828,6 @@ local posZ = 0
         end)
 
 
-        spawn(function()
-            while task.wait() do
-                if _G.Aki1 then
-                    pcall(function()
-                        _G.SkipLevel = true
-                        if game.Players.localPlayer.Data.Level.Value == 150 or Lv <= 174 then
-                            _G.SkipLevel = false
-                            AutoFarmQuest = true
-                        end
-                    end)
-                end
-            end
-        end)   
         
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
         game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
