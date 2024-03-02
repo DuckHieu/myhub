@@ -2722,7 +2722,7 @@ local posZ = 0
           Tween(CFrameQ)
           end
     else
-            Tween(CFrameQ)
+            Tween(CFrameMon)
             end
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
