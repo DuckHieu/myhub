@@ -2774,7 +2774,6 @@ local posZ = 0
             while task.wait() do
                 if _G.SkipFarm then
                     pcall(function()
-                        
                         if BypassTP then
                             if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Skip.Position).Magnitude > 3500 then
                                 BTP(QuestSkip)
@@ -2795,7 +2794,7 @@ local posZ = 0
                                             bucailon = true
                                             EquipTool(SelectWeapon)
                                             Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX, posY, posZ))
-                                            v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                            v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
                                             v.HumanoidRootPart.Transparency = 1
                                             v.Humanoid.JumpPower = 0
                                             v.Humanoid.WalkSpeed = 0
