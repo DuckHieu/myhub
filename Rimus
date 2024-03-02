@@ -2803,8 +2803,10 @@ local posZ = 0
                                             FarmPos = v.HumanoidRootPart.CFrame
                                             MonFarm = v.Name
               --Click
-                                        until not _G.SkipFarm or not v.Parent or v.Humanoid.Health <= 0
+                                        until not _G.SkipFarm or not v.Parent or Lv == 150 or Lv <= 174 or SelectMonster == "Sky Bandit" or SelectArea == 'Sky' or v.Humanoid.Health <= 0
                                         bucailon = false
+                                        _G.SkipFarm = false
+                                        AutoFarmQuest = true
                                     end
                                 end
                             end
@@ -2813,10 +2815,8 @@ local posZ = 0
                                 if string.find(b.Name, NameMon) then
                                     if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - b.Position).Magnitude >= 10 then
                                         Tween(b.CFrame * CFrame.new(posX, posY, posZ))
-                                        if	Lv == 150 or Lv <= 174 or SelectMonster == "Sky Bandit" or SelectArea == 'Sky' then -- Sky Bandit
-                                            _G.SkipFarm = false
-                                            AutoFarmQuest = true
-                                        end
+                                        
+                                        
                                     end
                                 end
                             end
