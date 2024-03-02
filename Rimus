@@ -2825,6 +2825,8 @@ local posZ = 0
                 end
             end
         end)
+
+
         spawn(function()
             while task.wait() do
                 if _G.Aki1 then
@@ -2845,7 +2847,7 @@ local posZ = 0
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn") then
         game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
     end
-
+_G.Aki1 = true
     local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Near Mob", Default = false })
     ToggleMobAura:OnChanged(function(Value)
         AutoFarmNearestMob = Value
