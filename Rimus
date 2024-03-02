@@ -2803,8 +2803,8 @@ local posZ = 0
                                             FarmPos = v.HumanoidRootPart.CFrame
                                             MonFarm = v.Name
               --Click
-                                        until not _G.SkipFarm or not v.Parent or game.Players.localPlayer.Data.Level.Value == 150 or Lv <= 174 or SelectMonster == "Sky Bandit" or SelectArea == 'Sky' or v.Humanoid.Health <= 0
-                                        bucailon = true             
+                                        until not _G.SkipFarm or not v.Parent or v.Humanoid.Health <= 0
+                                        bucailon = false
                                     end
                                 end
                             end
@@ -2812,7 +2812,7 @@ local posZ = 0
                             for a, b in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()) do
                                 if string.find(b.Name, NameMon) then
                                     if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - b.Position).Magnitude >= 10 then
-                                        Tween(b.CFrame * CFrame.new(posX, posY, posZ)) 
+                                        Tween(b.CFrame * CFrame.new(posX, posY, posZ))
                                     end
                                 end
                             end
@@ -2822,15 +2822,13 @@ local posZ = 0
             end
         end)
 
-
-        
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
         game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
     end
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn") then
         game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
     end
-_G.Aki1 = true
+
     local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Near Mob", Default = false })
     ToggleMobAura:OnChanged(function(Value)
         AutoFarmNearestMob = Value
@@ -4553,7 +4551,7 @@ CamShake:Stop()
 
     local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Bypass Tp", Default = false })
     ToggleBypassTP:OnChanged(function(Value)
-        BypassTP = false
+        BypassTP = true
     end)
     Options.ToggleBypassTP:SetValue(Value)
 end
