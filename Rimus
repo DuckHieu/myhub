@@ -2049,7 +2049,7 @@ local ToggleSkipFarm = Tabs.Main:AddToggle("ToggleSkipFarm", {Title = "Auto Farm
                                     if v.Name == Akiki1 then
                                         repeat
                                             wait(0.01)
-                                            lagdeochiuduoc()
+                                            
                                             AkikiFast()
                                             AutoHaki()
                                             bucailon = true
@@ -2208,7 +2208,7 @@ end)
 
 
 
-function lagdeochiuduoc()
+
     local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
 		local g = game
 		local w = g.Workspace
@@ -2246,4 +2246,4 @@ function lagdeochiuduoc()
 				e.Enabled = false
 			end
 		end
-	end
+	
