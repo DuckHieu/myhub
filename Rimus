@@ -2051,7 +2051,7 @@ local ToggleSkipFarm = Tabs.Main:AddToggle("ToggleSkipFarm", {Title = "Auto Farm
                                             wait(0.01)
                                             AkikiFast()
                                             AutoHaki()
-                                            bucailon = true
+                                            bringfixlag = true
                                             EquipTool(SelectWeapon)
                                             Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX, posY, posZ))
                                             v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
@@ -2088,7 +2088,15 @@ local ToggleSkipFarm = Tabs.Main:AddToggle("ToggleSkipFarm", {Title = "Auto Farm
         game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
     end
 
-
+    spawn(function()
+        while wait() do
+            if bringfixlag then
+                pcall(function()
+                    game.Workspace.Enemies[Selectmob].HumanoidRootPart.CFrame = a.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,Distance)
+                end)
+            end
+        end
+    end)
 
 
 	local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
