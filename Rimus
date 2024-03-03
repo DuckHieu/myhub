@@ -2022,7 +2022,7 @@ task.spawn(function()
 end)
 
 
-local ToggleSkipFarm = Tabs.Main:AddToggle("ToggleSkipFarm", {Title = "Skip Level (1-150)", Default = false })
+local ToggleSkipFarm = Tabs.Main:AddToggle("ToggleSkipFarm", {Title = "Auto Farm", Default = false })
         ToggleSkipFarm:OnChanged(function(Value)
         _G.SkipFarm = Value
     end)
